@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="parkingprice.css">
+</head>
+<body>
+
+    <div id="heading">
+        <h1 id="head">MAMACITA Parking lot</h1> 
+        <img src="image2.jpg"> 
+        
+        <div id="heading1">
+            <h2>Payable amount :</h2>
+            <p id="price">
+                0hr - 1hr   =   10rs <br>
+                1hr - 3hr =   30rs <br>
+                3hr - 6hr = 60rs <br>
+                6hr & above = 120rs 
+            </p>
+            No. of hours :
+            <input type="number" id="input" placeholder="example 0"> <br><br>
+            <button id="button" onclick="calculate()">Calculate</button>
+    
+            <h1 id="output"></h1>
+        </div>
+
+    </div>
+    <script>
+        let input = document.querySelector("#input")
+        let output = document.querySelector("#output")
+        let button = document.querySelector("#button")
+
+        button.addEventListener('click',calculate)
+        function calculate(){
+            input1 = input.value
+
+            if(input1>=0 && input1<=1)
+            output.innerHTML = "Total price for "+input1+"hr is 20rs"
+        else if(input1>1 && input1<=3)
+            output.innerHTML = "Total price for "+input1+"hr is 30rs"
+        else if(input1>3 && input1<=6)
+            output.innerHTML = "Total price for "+input1+"hr is 60rs"
+        else if(input1>6)
+            output.innerHTML = "Total price for "+input1+"hr is 120rs"
+        else if(input1='')
+            output.innerHTML = "please enter a valid number"
+        else
+           output.innerHTML = "Is Not A Number "
+        }
+
+    </script>
+
+
+
+    
+</body>
+</html>
