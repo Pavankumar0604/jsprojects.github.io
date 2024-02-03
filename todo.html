@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input" placeholder="Enter text">
+
+    <button id="btn">Click me</button>
+     <div id="out"></div>
+
+     <script>
+        let input=document.querySelector("#input")
+        let button=document.querySelector("#btn")
+        let output=document.querySelector("#out")
+
+        button.addEventListener('click', getvalues)
+
+        function getvalues(){
+            
+            let input1=input.value
+            add1(input1)
+            input.value=' '
+
+        }
+
+        function add1(add1){
+            let h1=document.createElement('h1')
+            output.appendChild(h1)
+            h1.innerHTML=add1
+
+            h1.addEventListener('click', ()=>{
+                h1.style.textDecoration='line-through'
+                remove(add1)
+
+            })
+        }
+
+
+     </script>
+    
+</body>
+</html>
